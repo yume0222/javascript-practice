@@ -1,0 +1,90 @@
+@charset 'utf-8';
+
+html {
+  font-size: 100%;
+  letter-spacing: 0.15em;
+  line-height: 1.8;
+}
+:root {
+  --text: #6A6A6A;
+  --title-font: "Raleway", serif;
+  --text-font: "Noto Sans JP", serif;
+}
+.wrapper {
+  max-width: 38rem;
+  margin: auto;
+  padding: 0 1rem;
+}
+img {
+  max-width: 100%;
+}
+/* ローディング */
+#loading {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  background: #eee;
+}
+#loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  background: #A9BA8E;
+  translate: (0 100vh);
+}
+#loading p {
+  font-size: 2rem;
+  font-family: var(--title-font);
+}
+/* ギャラリー */
+.gallery {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.gallery-image {
+  width: calc(38rem - 2rem);
+}
+.gallery-image img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+}
+.title {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-family: var(--title-font);
+  text-align: center;
+}
+.gallery-thumbnails {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(5, 1fr);
+  list-style: none;
+}
+.gallery-thumbnails img {
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  /* ギャラリー */
+  .gallery {
+    flex-direction: row;
+  }
+  .gallery-image {
+    width: 50vw;
+  }
+  .gallery-image img {
+    height: 100vh;
+  }
+  .gallery-content {
+    width: 30vw;
+  }
+  .gallery-thumbnails {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}
