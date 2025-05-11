@@ -4,21 +4,52 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JavaScript練習</title>
+  <script src="https://kit.fontawesome.com/f06f995cfd.js" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Noto+Sans+JP:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
   <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-  <!-- ローディング画面 -->
+  <!-- ローディング -->
   <div id="loading">
     <p>Loading...</p>
     <div id="loading-screen"></div>
   </div>
 
+  <!-- スライドメニュー -->
+  <nav>
+    <button id="menu-open" class="btn-menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <div id="menu-panel">
+      <button id="menu-close" class="btn-menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <ul class="menu-list">
+        <li><a href="#">Online Shop</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">YouTube</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
   <!-- Hero -->
   <section class="hero">
     <h1 class="title">Lorem ipsum</h1>
+  </section>
+
+  <!-- Concept -->
+  <section class="concept">
+    <div class="wrapper">
+      <h2 class="title">Concept</h2>
+      <p class="fadein">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo con
+      </p>
+    </div>
+    <img src="images/jellyfish.jpg" alt="">
   </section>
 
   <!-- 画像ギャラリー -->
@@ -29,18 +60,34 @@
     <div class="gallery-content wrapper">
         <h2 class="title">Lorem ipsum</h2>
         <ul class="gallery-thumbnails">
-            <li><img src="images/penguin-1.jpg" alt=""></li>
-            <li><img src="images/penguin-2.jpg" alt=""></li>
-            <li><img src="images/penguin-3.jpg" alt=""></li>
-            <li><img src="images/penguin-4.jpg" alt=""></li>
-            <li><img src="images/penguin-5.jpg" alt=""></li>
-            <li><img src="images/penguin-6.jpg" alt=""></li>
-            <li><img src="images/penguin-7.jpg" alt=""></li>
-            <li><img src="images/penguin-8.jpg" alt=""></li>
-            <li><img src="images/penguin-9.jpg" alt=""></li>
+            <li class="fadein"><img src="images/penguin-1.jpg" alt=""></li>
+            <li class="fadein"><img src="images/penguin-2.jpg" alt=""></li>
+            <li class="fadein"><img src="images/penguin-3.jpg" alt=""></li>
+            <li class="fadein"><img src="images/penguin-4.jpg" alt=""></li>
+            <li class="fadein"><img src="images/penguin-5.jpg" alt=""></li>
+            <li class="fadein"><img src="images/penguin-6.jpg" alt=""></li>
+            <li class="fadein"><img src="images/penguin-7.jpg" alt=""></li>
+            <li class="fadein"><img src="images/penguin-8.jpg" alt=""></li>
+            <li class="fadein"><img src="images/penguin-9.jpg" alt=""></li>
         </ul>
     </div>
   </section>
+
+  <!-- Shop -->
+  <section class="shop">
+    <div class="shop-content wrapper">
+      <h2 class="title fadein">Shop</h2>
+      <p class="fadein">Lorem ipsum dolor sit amet, consectetur adipisicing elit, se</p>
+      <a href="#">オンラインショップ</a>
+      <h3 class="fadein">×××店</h3>
+      <p class="fadein">
+        東京都××区×××1-2-3<br>
+        営業日：金・土・日・祝<br>
+        営業時間：11:00〜18:00
+      </p>
+    </div>
+  </section>
+
   <script src="js/script.js"></script>
 </body>
 </html>
