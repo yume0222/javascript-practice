@@ -6,6 +6,21 @@ html {
   letter-spacing: 0.15em;
   line-height: 1.8;
 }
+body {
+  position: relative;
+  text-align: center;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url('../images/underwater.jpg') no-repeat right top / cover;
+  opacity: .2;
+  z-index: -1;
+}
+.fadein {
+  opacity: 0; /* アニメーションの指定 */
+}
 :root {
   --text: #6A6A6A;
   --title-font: "Raleway", serif;
@@ -16,31 +31,17 @@ html {
   margin: auto;
   padding: 0 1rem;
 }
+.title {
+  margin-bottom: 2rem;
+  font-size: 40px;
+  font-family: var(--title-font);
+}
+p {
+  font-family: var(--text-font);
+}
 img {
   max-width: 100%;
-}
-
-/* Hero */
-.hero {
-  position: relative;
-  height: 100vh;
-}
-.hero::after {
-  position: absolute;
-  content: '';
-  width: 50%;
-  height: 100vh;
-  background: url('../images/sea.jpg') no-repeat center / cover;
-  inset: 0;
-}
-.hero .title {
-  position: absolute;
-  z-index: 2;
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
-  font-size: 48px;
-  font-family: var(--title-font);
+  object-fit: cover;
 }
 
 /* ローディング */
@@ -64,13 +65,88 @@ img {
   font-family: var(--title-font);
 }
 
+/* スライドメニュー */
+/* 開閉ボタン */
+.btn-menu {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 4;
+}
+#menu-open {
+  color: #000;
+}
+.btn-menu i {
+  font-size: 2rem;
+}
+/* 閉じるボタン */
+#menu-close {
+  color: #fff;
+}
+/* スライドメニューパネル */
+#menu-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 4;
+  width: max(32vw, 20rem);
+  height: 100vh;
+  padding-top: 8rem;
+  background-color: #000;
+  translate: 100vw; /* 画面外 */
+}
+.menu-list {
+  list-style: none;
+}
+.menu-list li {
+  margin: 16px 0;
+  font-family: var(--title-font);
+  opacity: 0;  /* 透明から不透明 */
+}
+.menu-list a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  height: 100vh;
+}
+.hero::after {
+  position: absolute;
+  content: '';
+  width: 50%;
+  height: 100vh;
+  background: url('../images/sea-1.jpg') no-repeat center / cover;
+  inset: 0;
+}
+.hero .title {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  font-size: 64px;
+  font-family: var(--title-font);
+}
+
+/* Concept */
+.concept {
+  margin: 8rem 0;
+}
+.concept p {
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
 /* 画像ギャラリー */
 .gallery {
   display: flex;
   flex-direction: column-reverse;
 }
 .gallery-image {
-  width: calc(38rem - 2rem);
+  width: min(100%, calc(38rem - 2rem));
   margin: auto;
 }
 .gallery-image img {
@@ -78,17 +154,12 @@ img {
   aspect-ratio: 3/4;
   object-fit: cover;
 }
-.gallery-content .title {
-  margin-bottom: 2rem;
-  font-size: 2rem;
-  font-family: var(--title-font);
-  text-align: center;
-}
 .gallery-thumbnails {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(5, 1fr);
   list-style: none;
+  margin: 1rem 0;
 }
 .gallery-thumbnails img {
   aspect-ratio: 3/4;
@@ -96,7 +167,49 @@ img {
   cursor: pointer;
 }
 
+/* Shop */
+.shop {
+  margin-top: 16rem;
+  background: url('../images/sea-2.jpg') no-repeat center top / cover;
+  position: relative;
+  height: 40rem;
+}
+.shop-content {
+  padding: 3rem;
+  background: #fff;
+  position: absolute;
+  top: -8rem;
+  left: 0;
+  right: 0;
+}
+.shop a {
+  display: inline-block;
+  margin: 2rem 0;
+  padding: 12px 24px;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+}
+.shop h3 {
+  margin: 1rem 0;
+  padding-top: 2rem;
+  font-size: 16px;
+  font-family: var(--text-font);
+  font-weight: normal;
+  border-top: 1px solid #eee;
+}
+
 @media (min-width: 768px) {
+  /* Concept */
+  .concept {
+    display: flex;
+    margin: 16rem 0;
+  }
+  .concept img {
+    margin: -6rem 0;
+    max-width: 38rem;
+  }
+
   /* 画像ギャラリー */
   .gallery {
     flex-direction: row;
@@ -115,4 +228,8 @@ img {
     grid-template-columns: repeat(3, 1fr);
   }
 
+  /* SHOP */
+  .shop {
+    margin-top: 20rem;
+  }
 }
